@@ -1,0 +1,20 @@
+<div class="pop-up">
+  <div class="pop-up__wrap">
+    <div class="pop-up__header">
+      <h4 class="pop-up__title">{{modal.title}}</h4>
+      <a class="pop-up__close" href="javascript:;">{{>button-exit}}</a>
+    </div>
+    <div class="pop-up__body">
+      <p>{{modal.message}}</p>
+    </div>
+    <div class="pop-up__footer {{#if modal.isprompt }}is-half{{/if}}">
+      {{#if modal.buttons }}
+        {{#each modal.buttons }}
+          <a class="pop-up__button {{this.class}}" href="javascript:;">{{this.caption}}</a>
+        {{/each}}
+      {{else}}
+          <a class="pop-up__button pop-up__exit" href="javascript:;">Go Back</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
