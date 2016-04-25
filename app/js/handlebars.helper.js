@@ -2,6 +2,20 @@
 Handlebars.partials = Handlebars.templates;
 Handlebars.partials = this['App']['Templates'];
 
+Handlebars.registerHelper("stripSlashes", function(str){
+  return str.replace(/\\(.)/mg, "$1");
+});
+
+Handlebars.registerHelper("textTrimmer", function(str) {
+  var text = str.substring(0, str.lastIndexOf('.'));
+
+  if ( str.indexOf('.') === -1 ){
+    text = str;
+  }
+
+  return text;
+});
+
 Handlebars.registerHelper("timeToMinutes", function(secs) {
   var pad = function(num) {
     return ("0"+num).slice(-2);
