@@ -17,9 +17,9 @@
 var App = (function(){
 	// var apiBasePath = "http://localhost/engage_uat/engage/api/quizsql";
 	// var apiBasePath = "http://50.57.237.52/engage_uat/engage/api/quizsql";
-	var serverPath = "http://50.57.237.52/engage_uat";
-	var apiBasePath = serverPath+"/engage/api/quizsql";
-	var qimagePath = serverPath+"/engage_cms/mod/engage/images/question/";
+	var serverPath = config.serverPath;
+	var apiBasePath = config.serverPath+config.apiBasePath;
+	var qimagePath = config.serverPath+config.qimagePath;
 	// var apiBasePath = "../../engage/api/quizsql";
 
 	// Start Setup
@@ -1372,6 +1372,7 @@ var App = (function(){
 		configMap.currentScreen = 'versus';
 
 		// var players = configMap.ps.players;
+		configMap.ps.players.a.icon = configMap.ps.players.a.photo_url;
 		var player = configMap.ps.players.a;//.name;
 
 		configMap.player = configMap.ps.players.a;
